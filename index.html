@@ -4,27 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finance Bot Demo</title>
-    <!-- n8n chat widget styles -->
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <style>
+      body, html { margin: 0; padding: 0; font-family: system-ui, sans-serif; background: #f9fafb; color: #111827; }
+      .container { max-width: 800px; margin: 3rem auto; padding: 1.5rem; text-align: center; }
+      h1 { font-size: 2.25rem; font-weight: 600; margin-bottom: 1rem; }
+      p  { font-size: 1.125rem; margin-bottom: 2rem; }
+      iframe { width: 100%; height: 700px; max-height: 90vh; border: none; border-radius: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    </style>
   </head>
-  <body class="font-sans antialiased bg-gray-50 text-gray-900">
-    <main class="mx-auto max-w-2xl p-6 text-center">
-      <h1 class="text-3xl font-semibold mb-4">Finance Bot</h1>
-      <p class="mb-8 text-lg">Ask anything about stocks, crypto, or company fundamentals. The chat button in the corner will open an AI assistant powered by your n8n workflow.</p>
-    </main>
-
-    <!-- n8n chat widget script -->
-    <script type="module">
-      import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js";
-
-      createChat({
-        // 🔀 Replace with the Production Webhook URL from your Chat Trigger node
-        webhookUrl: "https://skull42.app.n8n.cloud/webhook/e914f8f8-c1ac-4e15-838c-67c8b50ce8d0/chat",
-
-        title: "FinBot",
-        mode: "window", // 'window' = button + modal, 'fullscreen' = full‑page chat
-        metadata: { source: "local-demo" },
-      });
-    </script>
+  <body>
+    <div class="container">
+      <h1>Finance Bot</h1>
+      <p>Ask anything about stocks, crypto, or company fundamentals. The chat below is powered by your n8n workflow.</p>
+      <!-- Hosted‑chat iframe (avoids CORS) -->
+      <iframe src="https://skull42.app.n8n.cloud/webhook/e914f8f8-c1ac-4e15-838c-67c8b50ce8d0/chat" loading="lazy" title="FinBot chat"></iframe>
+    </div>
   </body>
 </html>
