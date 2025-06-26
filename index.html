@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance Bot Demo</title>
+    <!-- n8n chat widget styles -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  </head>
+  <body class="font-sans antialiased bg-gray-50 text-gray-900">
+    <main class="mx-auto max-w-2xl p-6 text-center">
+      <h1 class="text-3xl font-semibold mb-4">Finance Bot</h1>
+      <p class="mb-8 text-lg">Ask anything about stocks, crypto, or company fundamentals. The chat button in the corner will open an AI assistant powered by your n8n workflow.</p>
+    </main>
+
+    <!-- n8n chat widget script -->
+    <script type="module">
+      import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js";
+
+      createChat({
+        // 🔀 Replace with the Production Webhook URL from your Chat Trigger node
+        webhookUrl: "https://skull42.app.n8n.cloud/webhook/e914f8f8-c1ac-4e15-838c-67c8b50ce8d0/chat",
+
+        title: "FinBot",
+        mode: "window", // 'window' = button + modal, 'fullscreen' = full‑page chat
+        metadata: { source: "local-demo" },
+      });
+    </script>
+  </body>
+</html>
